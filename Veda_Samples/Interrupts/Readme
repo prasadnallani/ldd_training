@@ -1,0 +1,11 @@
+
+
+do_irq
+
+1. Disable local process scheduler
+2. Disable irq Line
+3. Run Registered ISR's
+4. Enable IRQ line
+5. Run pending Softirq's
+6. Enable process Scheduler
+

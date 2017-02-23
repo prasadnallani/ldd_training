@@ -1,0 +1,23 @@
+shared libraries with soname 
+
+1. Compile sources to Position Independent Relocatables
+
+      gcc -c -fPIC mytest.c
+
+2. Build shared library  
+
+     gcc -shared -Wl,-soname,libxyz.so.1 -o libxyz.so.1.0.0 mytest.o
+
+3. Create a pointer from soname to library file
+
+    ln -sf libxyz.so.1.0.0 libxyz.so.1
+
+4. Create a pointer for linker to use while resolving -lxyz flag
+ 
+   ln -sf libxyz.so.1 libxyz.so
+
+5. Link applications with the lib using
+
+    gcc testapp.o -o test -L. -lxyz
+
+
