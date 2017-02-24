@@ -1,0 +1,8 @@
+kernel//local/mnt/workspace/training/day2/mm_new/alloc_page.ko
+kernel//local/mnt/workspace/training/day2/mm_new/structpage.ko
+kernel//local/mnt/workspace/training/day2/mm_new/ptdump.ko
+kernel//local/mnt/workspace/training/day2/mm_new/mycache.ko
+kernel//local/mnt/workspace/training/day2/mm_new/dma_test11.ko
+kernel//local/mnt/workspace/training/day2/mm_new/dma_test11111.ko
+kernel//local/mnt/workspace/training/day2/mm_new/dma_test2.ko
+kernel//local/mnt/workspace/training/day2/mm_new/dma_test3.ko

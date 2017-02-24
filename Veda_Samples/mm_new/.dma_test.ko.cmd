@@ -1,0 +1,1 @@
+cmd_/home/unixadmin/Desktop/training/day2/mm/dma_test.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-2.6.32-24-generic/scripts/module-common.lds --build-id -o /home/unixadmin/Desktop/training/day2/mm/dma_test.ko /home/unixadmin/Desktop/training/day2/mm/dma_test.o /home/unixadmin/Desktop/training/day2/mm/dma_test.mod.o

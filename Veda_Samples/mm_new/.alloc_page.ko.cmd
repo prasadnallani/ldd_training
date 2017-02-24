@@ -1,0 +1,1 @@
+cmd_/local/mnt/workspace/training/day2/mm_new/alloc_page.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-2.6.32-37-generic/scripts/module-common.lds --build-id -o /local/mnt/workspace/training/day2/mm_new/alloc_page.ko /local/mnt/workspace/training/day2/mm_new/alloc_page.o /local/mnt/workspace/training/day2/mm_new/alloc_page.mod.o
