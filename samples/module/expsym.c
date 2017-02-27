@@ -6,15 +6,15 @@
 * Description        : This sample program shows how to implement      *
 *                      a simple module with module init & clean up.    *
 *                                                                      *
-* Programmer         : B R Sahu                                        *
+* Programmer         :                                                 *
 * Date               : 15/07/2006                                      *
 *                                                                      *
 *----------------------------------------------------------------------*
 * Notes                                                                *
-* How To Build : On the command prompt give "gcc -c expsym.c",this will*
-*                compile and give 'module.o' file which you can load.  *
+* How To Build : On the command prompt give "make",this will*
+*                compile and give 'expsym.ko' file which you can load.  *
 *                                                                      *
-* How To Load  : To load the expsym.o file give "insmod expsym.o",     *
+* How To Load  : To load the expsym.ko file give "insmod expsym.ko",     *
 *                this will load the module to the kernel.              *
 *                                                                      *
 ***********************************************************************/

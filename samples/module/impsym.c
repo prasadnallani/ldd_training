@@ -6,15 +6,15 @@
 * Description        : This sample program shows how to implement      *
 *                      a simple module with module init & clean up.    *
 *                                                                      *
-* Programmer         : B R Sahu                                        *
+* Programmer         :                                                 *
 * Date               : 06/01/2005                                      *
 *                                                                      *
 *----------------------------------------------------------------------*
 * Notes                                                                *
-* How To Build : On the command prompt give "gcc -c impsym.c",this     *
-*                will compile and give 'impsym.o' file which you can   *
+* How To Build : On the command prompt give "make",this                *
+*                will compile and give 'impsym.ko' file which you can  *
 *                load.                                                 *
-* How To Load  : To load the module.o file give "insmod impsym.o",     *
+* How To Load  : To load the module.ko file give "insmod impsym.ko",   *
 *                this will load the module to the kernel.              *
 *                                                                      *
 ***********************************************************************/

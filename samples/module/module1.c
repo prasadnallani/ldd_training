@@ -12,10 +12,10 @@
 *                                                                      *
 *----------------------------------------------------------------------*
 * Notes                                                                *
-* How To Build : On the command prompt give "gcc -c module1.c",this    *
-*                will compile and give 'module1.o' file which you can  *
+* How To Build : On the command prompt give "make",this    *
+*                will compile and give 'module1.ko' file which you can  *
 *                load.                                                 *
-* How To Load  : To load the module1.o file give "insmod module1.o",   *
+* How To Load  : To load the module1.o file give "insmod module1.ko",   *
 *                this will load the module to the kernel.              *
 *                                                                      *
 ***********************************************************************/
