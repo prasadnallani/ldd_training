@@ -1,0 +1,14 @@
+
+1.Compile using make file
+2.Insert module using insmod 
+3.Get the Major number from dmesg
+4.Create node using below command
+  mknod /dev/<device_name> c <Major> <Minor-0>
+
+5.Compile main file using gcc main.c -o main
+
+6. Run ./main 
+
+Enjoy ...!
+
+
