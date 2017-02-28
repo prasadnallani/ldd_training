@@ -9,7 +9,9 @@ rm -f /dev/${device}
 # and use a pathname, as newer modutils don't look in . by default
 /sbin/insmod -f ./$module.ko $* || exit 1
 
-major=`cat /proc/devices | awk "\\$2==\"$device\" {print \\$1}"`
+#major=`cat /proc/devices | awk "\\$2==\"$device\" {print \\$1}"`
+#250 is major number
 
-mknod /dev/${device} c $major 0
+mknod /dev/${device} c 250 0
+
 

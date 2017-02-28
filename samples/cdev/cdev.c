@@ -38,7 +38,7 @@ static int my_open(struct inode *inode, struct file *filp){
 
 static int my_close(struct inode *inode, struct file *filp){
                 int minor;
-                minor = MINOR(filp->f_dentry->d_inode->i_rdev);
+                minor = iminor(filp->f_path.dentry->d_inode);
                 printk("*****Some body is closing me at minor %d*****\n",minor);
                 return 0;
                 }
@@ -55,12 +55,12 @@ static int my_close(struct inode *inode, struct file *filp){
 
 
 ssize_t my_read(struct file *filp, char *buf, size_t count, loff_t *offset){
-                int minor;
-                minor = MINOR(filp->f_dentry->d_inode->i_rdev);
-                printk("*****Some body is reading me at minor %d*****\n",minor);
+	int minor;
+	minor = iminor(filp->f_path.dentry->d_inode);
+	printk("*****Some body is reading me at minor %d*****\n",minor);
 
-                return count;
-                }
+	return count;
+}
 
 /************************************************************************************
 ****	When application calls ssize_t write(int fd, const void *buf, size_t count),*
@@ -71,11 +71,11 @@ ssize_t my_read(struct file *filp, char *buf, size_t count, loff_t *offset){
 ************************************************************************************/
 
 ssize_t my_write(struct file *filp, const char *buf, size_t count, loff_t *offset){
-                int minor;
-                minor = MINOR(filp->f_dentry->d_inode->i_rdev);
-                printk("*****Some body is writing me at minor %d*****\n",minor);
-                return count;
-                }
+	int minor;
+	minor = iminor(filp->f_path.dentry->d_inode);
+	printk("*****Some body is writing me at minor %d*****\n",minor);
+	return count;
+}
 
 /************************************************************************************
 ****	When application calls int ioctl(int fd, int request char *argp),        ****
@@ -86,19 +86,19 @@ ssize_t my_write(struct file *filp, const char *buf, size_t count, loff_t *offse
 ************************************************************************************/
 
 int my_control(struct inode *inode, struct file *filp, unsigned int command, unsigned long argument){
-                int minor;
-                minor = MINOR(filp->f_dentry->d_inode->i_rdev);
-                printk("*****Some body is controlling me at minor %d*****\n",minor);
-                return 0;
-                }
+	int minor;
+	minor = iminor(filp->f_path.dentry->d_inode);
+	printk("*****Some body is controlling me at minor %d*****\n",minor);
+	return 0;
+}
 
 struct file_operations my_fops = {
-        read    :       my_read,
-        write   :       my_write,
-        open    :       my_open,
-        release :       my_close,
-        ioctl   :       my_control,
-        owner   :       THIS_MODULE,
+        read    	:       my_read,
+        write   	:       my_write,
+        open    	:       my_open,
+        release		:       my_close,
+        unlocked_ioctl  :       my_control,
+        owner   	:       THIS_MODULE,
         };
 
 struct cdev my_cdev;
